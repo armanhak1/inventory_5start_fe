@@ -79,8 +79,9 @@ export function TopNav({
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Search items..."
-              className="w-full pl-10 sm:pl-12 pr-10 sm:pr-12 py-2.5 sm:py-3 text-sm sm:text-base border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 shadow-sm"
+              className="w-full pl-10 sm:pl-12 pr-10 sm:pr-12 py-3 sm:py-3 text-base sm:text-base border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 shadow-sm"
               aria-label="Search inventory items"
+              style={{ fontSize: '16px' }}
             />
             <svg
               className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400 pointer-events-none"
