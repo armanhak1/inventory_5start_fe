@@ -1,4 +1,4 @@
-import type { Item, ItemType, StatusColor } from '../types';
+import type { Item, StatusColor } from '../types';
 
 /**
  * Calculate status color based on item type and value

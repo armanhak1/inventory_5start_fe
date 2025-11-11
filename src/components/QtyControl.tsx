@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect, KeyboardEvent } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import type { KeyboardEvent } from 'react';
 import { clampQty } from '../utils/inventory';
 
 interface QtyControlProps {
@@ -11,7 +12,6 @@ export function QtyControl({ value, onChange, disabled }: QtyControlProps) {
   const [inputValue, setInputValue] = useState(value.toString());
   const [isEditing, setIsEditing] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const holdIntervalRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!isEditing) {
@@ -29,20 +29,8 @@ export function QtyControl({ value, onChange, disabled }: QtyControlProps) {
     onChange(newValue);
   };
 
-  const startHold = (action: () => void) => {
-    action(); // Call once immediately
-    holdIntervalRef.current = window.setInterval(action, 150);
-  };
-
   const handleClick = (action: () => void) => {
     action(); // Single click
-  };
-
-  const stopHold = () => {
-    if (holdIntervalRef.current) {
-      clearInterval(holdIntervalRef.current);
-      holdIntervalRef.current = null;
-    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

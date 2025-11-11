@@ -1,9 +1,8 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import type { Item, ItemType, StatusColor, HistoryEntry } from './types';
-import { inventoryRepository, isUsingApi, apiUrl } from './repository/InventoryRepository';
+import { inventoryRepository } from './repository/InventoryRepository';
 import './App.css';
 import {
-  generateId,
   filterBySearch,
   filterByStatus,
 } from './utils/inventory';
